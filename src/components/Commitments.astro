@@ -1,0 +1,83 @@
+---
+// Commitments section - Nos engagements
+const commitments = [
+	{
+		icon: "fa-bullseye",
+		title: "Savoir-faire artisanal",
+		items: [
+			"15 ans d'expertise terrain",
+			"Techniques traditionnelles et modernes",
+			"Formation continue aux nouvelles tendances"
+		]
+	},
+	{
+		icon: "fa-star",
+		title: "Qualité garantie",
+		items: [
+			"Matériaux premium sélectionnés",
+			"Garantie décennale sur tous travaux",
+			"Finitions impeccables et soignées"
+		]
+	},
+	{
+		icon: "fa-handshake",
+		title: "Relation client",
+		items: [
+			"Écoute et conseil personnalisé",
+			"Respect strict des délais",
+			"Devis gratuit et transparent"
+		]
+	}
+];
+---
+
+<section id="engagements" class="py-12 md:py-16 lg:py-20 bg-slate-50">
+	<div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-800 leading-tight mb-4">
+				Nos engagements
+			</h2>
+			<p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+				Trois piliers fondamentaux guident notre travail au quotidien pour vous garantir un service d'excellence.
+			</p>
+		</div>
+
+		<!-- Commitments Grid -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+			{commitments.map((commitment) => (
+				<div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
+					<!-- Icon -->
+					<div class="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+						<i class={`fa-solid ${commitment.icon} text-3xl text-gold-600`}></i>
+					</div>
+
+					<!-- Title -->
+					<h3 class="text-xl md:text-2xl font-semibold text-dark-800 text-center mb-4">
+						{commitment.title}
+					</h3>
+
+					<!-- Items List -->
+					<ul class="space-y-3">
+						{commitment.items.map((item) => (
+							<li class="flex items-start gap-2 text-base text-slate-600">
+								<span class="text-gold-600 mt-1 flex-shrink-0">✓</span>
+								<span>{item}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+
+		<!-- CTA -->
+		<div class="text-center mt-12">
+			<a
+				href="#contact"
+				class="inline-flex items-center justify-center bg-gold-600 hover:bg-gold-700 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+			>
+				Demander un devis gratuit
+			</a>
+		</div>
+	</div>
+</section>

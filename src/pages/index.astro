@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import About from '../components/About.astro';
+import Commitments from '../components/Commitments.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="A2M Concept - Expert Carrelage & Rénovation BTP | Grand Est">
+	<Navbar />
+
+	<!-- Main Content -->
+	<main class="min-h-screen">
+		<!-- Accueil / Hero Section -->
+		<section id="accueil" class="relative h-[75vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+			<!-- Hero Background Image -->
+			<img
+				id="hero-image"
+				src="/images/image_header.jpg"
+				alt="Artisan A2M Concept posant du carrelage"
+				class="absolute inset-0 w-full h-full object-cover scale-110 blur-[2px]"
+			/>
+
+			<!-- Dark Overlay for text readability - Diagonal gradient effect -->
+			<div class="absolute inset-0 bg-gradient-to-br from-dark-900/70 to-dark-900/50"></div>
+
+			<!-- Hero Content - Floating Card -->
+			<div class="relative z-10 container mx-auto px-4 py-8 md:py-16 lg:py-20 max-w-5xl">
+				<!-- Main Card -->
+				<div class="bg-white rounded-2xl shadow-2xl p-6 md:p-12 lg:p-16 text-center">
+					<!-- Company Name -->
+					<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+						<span class="text-gold-600">A2M</span>
+						<span class="text-dark-800"> Concept</span>
+					</h1>
+
+					<!-- Decorative Divider -->
+					<div class="flex items-center justify-center mb-4 md:mb-6">
+						<div class="w-16 h-1 bg-gold-600 rounded-full"></div>
+					</div>
+
+					<!-- Tagline -->
+					<p class="text-xl md:text-2xl text-gold-600 font-semibold mb-6">
+						L'excellence au service de vos projets
+					</p>
+
+					<!-- Description -->
+					<p class="hidden md:block text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
+						Spécialiste du carrelage et de la rénovation dans le BTP. Nous mettons notre savoir-faire au service de vos projets pour garantir qualité et finitions impeccables.
+					</p>
+
+					<!-- CTA Buttons -->
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+						<!-- Primary Button - Écrivez-nous -->
+						<a
+							href="#contact"
+							class="w-full sm:w-auto inline-flex items-center justify-center bg-gold-600 hover:bg-gold-700 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+						>
+							Écrivez-nous
+						</a>
+
+						<!-- Secondary Button - Appelez-nous -->
+						<a
+							href="tel:+33XXXXXXXXX"
+							class="w-full sm:w-auto inline-flex items-center justify-center bg-dark-800 hover:bg-dark-900 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+						>
+							Appelez-nous
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- À propos -->
+		<About />
+
+		<!-- Engagements -->
+		<Commitments />
+
+		<!-- Notre métier (Services) -->
+		<Services />
+
+		<!-- Réalisations (Portfolio) -->
+		<Portfolio />
+
+		<!-- FAQ -->
+		<FAQ />
+
+		<!-- Contact -->
+		<Contact />
+	</main>
+
+	<!-- Footer -->
+	<Footer />
+</Layout>
+
+<script>
+	// Parallax effect for hero image
+	const heroImage = document.getElementById('hero-image');
+	const heroSection = document.getElementById('accueil');
+
+	if (heroImage && heroSection) {
+		window.addEventListener('scroll', () => {
+			const scrolled = window.pageYOffset;
+			const heroHeight = heroSection.offsetHeight;
+
+			// Only apply parallax when hero section is visible
+			if (scrolled < heroHeight) {
+				// Move image slower than scroll (0.5 = half speed)
+				const parallaxSpeed = 0.5;
+				heroImage.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.1)`;
+			}
+		});
+	}
+</script>

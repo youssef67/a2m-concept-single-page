@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:siecledigital.fr)",
+      "Bash(for f in \"Capture d''écran 2025-11-20 à 21.19.20.png\")",
+      "Bash(do cp \"$f\" screenshot2.png)",
+      "Bash(xargs:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel whoami:*)",
+      "Bash(vercel:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

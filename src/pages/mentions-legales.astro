@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Mentions légales - A2M Concept">
+	<Navbar />
+
+	<!-- Main Content -->
+	<main class="min-h-screen bg-white">
+		<section class="py-12 md:py-16 lg:py-20">
+			<div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+				<!-- Page Header -->
+				<div class="mb-12">
+					<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-800 leading-tight mb-4">
+						Mentions légales
+					</h1>
+					<p class="text-base md:text-lg text-slate-600">
+						Informations légales conformément à la loi pour la confiance dans l'économie numérique (LCEN).
+					</p>
+				</div>
+
+				<!-- Legal Content -->
+				<div class="prose prose-lg max-w-none space-y-8">
+					<!-- Éditeur du site -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							1. Éditeur du site
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-2">
+							<p><strong>Raison sociale :</strong> A2M Concept</p>
+							<p><strong>Forme juridique :</strong> [À COMPLÉTER - Ex: SARL, SAS, Auto-entrepreneur]</p>
+							<p><strong>Capital social :</strong> [À COMPLÉTER] €</p>
+							<p><strong>Siège social :</strong> [À COMPLÉTER - Adresse complète]<br />Strasbourg, Grand Est, France</p>
+							<p><strong>SIRET :</strong> [À COMPLÉTER - 14 chiffres]</p>
+							<p><strong>RCS :</strong> [À COMPLÉTER - Ex: RCS Strasbourg B XXX XXX XXX]</p>
+							<p><strong>Numéro TVA intracommunautaire :</strong> [À COMPLÉTER]</p>
+							<p><strong>Email :</strong> <a href="mailto:contact@a2m-concept.com" class="text-gold-600 hover:text-gold-700">contact@a2m-concept.com</a></p>
+							<p><strong>Téléphone :</strong> [À COMPLÉTER - Ex: 06 XX XX XX XX]</p>
+						</div>
+					</section>
+
+					<!-- Directeur de publication -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							2. Directeur de la publication
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-2">
+							<p><strong>Nom :</strong> [À COMPLÉTER - Nom du gérant/président]</p>
+							<p><strong>Qualité :</strong> [À COMPLÉTER - Ex: Gérant, Président]</p>
+						</div>
+					</section>
+
+					<!-- Hébergement -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							3. Hébergement du site
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-2">
+							<p><strong>Hébergeur :</strong> Vercel Inc.</p>
+							<p><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, USA</p>
+							<p><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener" class="text-gold-600 hover:text-gold-700">vercel.com</a></p>
+						</div>
+					</section>
+
+					<!-- Propriété intellectuelle -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							4. Propriété intellectuelle
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-3">
+							<p>
+								L'ensemble du contenu de ce site (textes, images, logos, vidéos) est la propriété exclusive d'A2M Concept, sauf mention contraire.
+							</p>
+							<p>
+								Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable d'A2M Concept.
+							</p>
+						</div>
+					</section>
+
+					<!-- Données personnelles -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							5. Données personnelles
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-3">
+							<p>
+								Les informations recueillies via le formulaire de contact sont destinées à A2M Concept pour le traitement de vos demandes.
+							</p>
+							<p>
+								Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données vous concernant.
+							</p>
+							<p>
+								Pour plus d'informations, consultez notre <a href="/politique-confidentialite" class="text-gold-600 hover:text-gold-700 font-medium">Politique de confidentialité</a>.
+							</p>
+						</div>
+					</section>
+
+					<!-- Cookies -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							6. Cookies
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-3">
+							<p>
+								Ce site n'utilise pas de cookies de suivi ou de publicité.
+							</p>
+						</div>
+					</section>
+
+					<!-- Crédits -->
+					<section>
+						<h2 class="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
+							7. Crédits
+						</h2>
+						<div class="text-base md:text-lg text-slate-600 space-y-2">
+							<p><strong>Conception et développement :</strong> A2M Concept</p>
+							<p><strong>Icônes :</strong> Font Awesome</p>
+						</div>
+					</section>
+				</div>
+
+				<!-- Back to Home -->
+				<div class="mt-12 text-center">
+					<a
+						href="/"
+						class="inline-flex items-center gap-2 text-gold-600 hover:text-gold-700 font-medium text-base md:text-lg transition-colors"
+					>
+						<i class="fa-solid fa-arrow-left"></i>
+						<span>Retour à l'accueil</span>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

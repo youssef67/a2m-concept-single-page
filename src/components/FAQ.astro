@@ -1,0 +1,147 @@
+---
+// FAQ section - Questions fréquentes
+const faqs = [
+	{
+		question: "Quels types de carrelage proposez-vous ?",
+		answer: "Nous proposons une large gamme de carrelages : céramique, grès cérame, pierre naturelle (marbre, granit, travertin, ardoise), faïence pour pièces humides, et carrelages d'extérieur résistants au gel."
+	},
+	{
+		question: "Intervenez-vous chez les particuliers et professionnels ?",
+		answer: "Oui, nous réalisons tous types de projets, que vous soyez particulier (rénovation, construction neuve) ou professionnel (locaux commerciaux, bureaux, restaurants)."
+	},
+	{
+		question: "Proposez-vous un devis gratuit ?",
+		answer: "Absolument ! Nous vous proposons un devis gratuit et sans engagement. Contactez-nous pour programmer une visite et discuter de votre projet."
+	},
+	{
+		question: "Quels sont vos délais d'intervention ?",
+		answer: "Les délais varient selon la taille et la complexité du projet. En moyenne, nous pouvons intervenir sous 2 semaines. Pour les urgences, n'hésitez pas à nous contacter."
+	},
+	{
+		question: "Avez-vous une garantie sur vos travaux ?",
+		answer: "Oui, tous nos travaux sont couverts par une garantie décennale. Nous sommes assurés et vous garantissons un travail conforme aux normes en vigueur."
+	},
+	{
+		question: "Quels sont vos tarifs ?",
+		answer: "Nos tarifs varient selon le type de carrelage, la surface à couvrir et la complexité du chantier. Chaque devis est personnalisé. Contactez-nous pour obtenir une estimation précise."
+	},
+	{
+		question: "Fournissez-vous les matériaux ?",
+		answer: "Oui, nous pouvons vous fournir tous les matériaux nécessaires. Nous travaillons avec des fournisseurs de qualité et vous aidons à choisir les produits adaptés à votre projet et budget."
+	},
+	{
+		question: "Puis-je fournir mon propre carrelage ?",
+		answer: "Bien sûr ! Si vous avez déjà acheté votre carrelage, nous pouvons réaliser la pose uniquement. Nous vous conseillons néanmoins sur les quantités nécessaires et la faisabilité technique."
+	}
+];
+---
+
+<section id="faq" class="py-12 md:py-16 lg:py-20 bg-white">
+	<div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-800 leading-tight mb-4">
+				Questions fréquentes
+			</h2>
+			<p class="text-base md:text-lg text-slate-600">
+				Vous avez des questions ? Nous avons les réponses.
+			</p>
+		</div>
+
+		<!-- FAQ Accordion -->
+		<div class="space-y-4">
+			{faqs.map((faq, index) => (
+				<div class="bg-slate-50 rounded-xl border border-slate-200 hover:border-gold-200 transition-colors overflow-hidden">
+					<!-- Question Button -->
+					<button
+						type="button"
+						class="w-full flex items-start justify-between gap-4 p-6 md:p-8 text-left hover:bg-slate-100 transition-colors"
+						data-faq-toggle={index}
+						aria-expanded="false"
+						aria-controls={`faq-answer-${index}`}
+					>
+						<!-- Question Text -->
+						<h3 class="text-lg md:text-xl font-semibold text-dark-800 flex items-start gap-3 flex-1">
+							<span class="flex-shrink-0 w-6 h-6 bg-gold-600 text-white rounded-full flex items-center justify-center text-sm">
+								{index + 1}
+							</span>
+							<span>{faq.question}</span>
+						</h3>
+
+						<!-- Chevron Icon -->
+						<i
+							class="fa-solid fa-chevron-down text-gold-600 text-xl flex-shrink-0 transition-transform duration-300 mt-1"
+							data-faq-icon={index}
+						></i>
+					</button>
+
+					<!-- Answer (Hidden by default) -->
+					<div
+						id={`faq-answer-${index}`}
+						class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+						data-faq-answer={index}
+					>
+						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 opacity-0 transition-opacity duration-300">
+								<p class="text-base text-slate-600 leading-relaxed ml-9">
+									{faq.answer}
+								</p>
+							</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Bottom CTA -->
+		<div class="text-center mt-12 p-8 bg-gold-50 rounded-2xl">
+			<h3 class="text-xl md:text-2xl font-semibold text-dark-800 mb-3">
+				Vous ne trouvez pas la réponse à votre question ?
+			</h3>
+			<p class="text-base text-slate-600 mb-6">
+				N'hésitez pas à nous contacter directement, nous serons ravis de vous répondre.
+			</p>
+			<a
+				href="#contact"
+				class="inline-flex items-center justify-center bg-gold-600 hover:bg-gold-700 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+			>
+				Nous contacter
+			</a>
+		</div>
+	</div>
+</section>
+
+<script>
+	// FAQ Accordion functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+
+		faqButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const index = button.getAttribute('data-faq-toggle');
+				const answer = document.querySelector(`[data-faq-answer="${index}"]`);
+				const answerContent = answer.querySelector('div');
+				const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+				const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+				// Toggle answer visibility with smooth animation
+				if (isOpen) {
+					// Close
+					answer.classList.remove('max-h-[500px]');
+					answer.classList.add('max-h-0');
+					answerContent.classList.remove('opacity-100');
+					answerContent.classList.add('opacity-0');
+					button.setAttribute('aria-expanded', 'false');
+				} else {
+					// Open
+					answer.classList.remove('max-h-0');
+					answer.classList.add('max-h-[500px]');
+					answerContent.classList.remove('opacity-0');
+					answerContent.classList.add('opacity-100');
+					button.setAttribute('aria-expanded', 'true');
+				}
+
+				// Rotate icon
+				icon.classList.toggle('rotate-180');
+			});
+		});
+	});
+</script>

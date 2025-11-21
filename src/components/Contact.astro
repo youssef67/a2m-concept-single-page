@@ -1,0 +1,273 @@
+---
+// Contact section - Formulaire et coordonnées
+---
+
+<section id="contact" class="py-12 md:py-16 lg:py-20 bg-slate-50">
+	<div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-800 leading-tight mb-4">
+				Contactez-nous
+			</h2>
+			<p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+				Un projet en tête ? Besoin d'un devis ? Nous sommes à votre écoute pour répondre à toutes vos questions.
+			</p>
+		</div>
+
+		<!-- Contact Grid -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+			<!-- Contact Form -->
+			<div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+				<h3 class="text-2xl font-semibold text-dark-800 mb-6">
+					Envoyez-nous un message
+				</h3>
+
+				<!-- Success Message -->
+				<div id="success-message" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+					<p class="text-green-800 font-medium flex items-center gap-2">
+						<i class="fa-solid fa-circle-check text-green-600"></i>
+						Merci ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
+					</p>
+				</div>
+
+				<!-- Error Message -->
+				<div id="error-message" class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+					<p class="text-red-800 font-medium flex items-center gap-2">
+						<i class="fa-solid fa-circle-exclamation text-red-600"></i>
+						Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.
+					</p>
+				</div>
+
+				<form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+					<!-- Web3Forms Access Key (Hidden) -->
+					<input type="hidden" name="access_key" value="b1589a22-1dc0-4083-b6f5-70d615ffcc79" />
+
+					<!-- Subject for email -->
+					<input type="hidden" name="subject" value="Nouveau message depuis A2M Concept" />
+
+					<!-- From Name (for email header) -->
+					<input type="hidden" name="from_name" value="Site A2M Concept" />
+					<!-- Name -->
+					<div>
+						<label for="name" class="block text-base font-medium text-slate-700 mb-2">
+							Nom complet <span class="text-red-500">*</span>
+						</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							class="w-full px-4 py-3 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-600 focus:border-transparent transition-all"
+							placeholder="Votre nom"
+						/>
+					</div>
+
+					<!-- Email -->
+					<div>
+						<label for="email" class="block text-base font-medium text-slate-700 mb-2">
+							Email <span class="text-red-500">*</span>
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							class="w-full px-4 py-3 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-600 focus:border-transparent transition-all"
+							placeholder="votre.email@exemple.fr"
+						/>
+					</div>
+
+					<!-- Phone -->
+					<div>
+						<label for="phone" class="block text-base font-medium text-slate-700 mb-2">
+							Téléphone
+						</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							class="w-full px-4 py-3 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-600 focus:border-transparent transition-all"
+							placeholder="06 XX XX XX XX"
+						/>
+					</div>
+
+					<!-- Message -->
+					<div>
+						<label for="message" class="block text-base font-medium text-slate-700 mb-2">
+							Message <span class="text-red-500">*</span>
+						</label>
+						<textarea
+							id="message"
+							name="message"
+							required
+							rows="6"
+							class="w-full px-4 py-3 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-600 focus:border-transparent transition-all resize-none"
+							placeholder="Décrivez votre projet..."
+						></textarea>
+					</div>
+
+					<!-- Submit Button -->
+					<button
+						type="submit"
+						id="submit-btn"
+						class="w-full bg-dark-800 hover:bg-dark-900 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+					>
+						<span id="btn-text">Envoyer le message</span>
+						<span id="btn-loading" class="hidden">
+							<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...
+						</span>
+					</button>
+				</form>
+			</div>
+
+			<!-- Contact Info -->
+			<div class="flex flex-col gap-6">
+				<!-- Info Card -->
+				<div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+					<h3 class="text-2xl font-semibold text-dark-800 mb-6">
+						Nos coordonnées
+					</h3>
+
+					<div class="space-y-6">
+						<!-- Phone -->
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center">
+								<i class="fa-solid fa-phone text-xl text-gold-600"></i>
+							</div>
+							<div>
+								<h4 class="font-semibold text-dark-800 mb-1">Téléphone</h4>
+								<a href="tel:+33XXXXXXXXX" class="text-base text-gold-600 hover:text-gold-700 font-medium">
+									06 XX XX XX XX
+								</a>
+							</div>
+						</div>
+
+						<!-- Email -->
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center">
+								<i class="fa-solid fa-envelope text-xl text-gold-600"></i>
+							</div>
+							<div>
+								<h4 class="font-semibold text-dark-800 mb-1">Email</h4>
+								<a href="mailto:contact@a2m-concept.com" class="text-base text-gold-600 hover:text-gold-700 font-medium break-all">
+									contact@a2m-concept.com
+								</a>
+							</div>
+						</div>
+
+						<!-- Address -->
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center">
+								<i class="fa-solid fa-location-dot text-xl text-gold-600"></i>
+							</div>
+							<div>
+								<h4 class="font-semibold text-dark-800 mb-1">Adresse</h4>
+								<p class="text-base text-slate-600">
+									Strasbourg<br />
+									Grand Est, France
+								</p>
+							</div>
+						</div>
+
+						<!-- Hours -->
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center">
+								<i class="fa-solid fa-clock text-xl text-gold-600"></i>
+							</div>
+							<div>
+								<h4 class="font-semibold text-dark-800 mb-1">Horaires</h4>
+								<p class="text-base text-slate-600">
+									Lundi - Vendredi<br />
+									8h00 - 18h00
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Quick Call CTA (Desktop) -->
+				<div class="hidden lg:block bg-gold-50 rounded-2xl p-6 md:p-8 border-2 border-gold-200 mt-auto">
+					<h3 class="text-xl font-semibold text-dark-800 mb-3">
+						Besoin d'une réponse rapide ?
+					</h3>
+					<p class="text-base text-slate-600 mb-4">
+						Appelez-nous directement, nous sommes disponibles pour répondre à vos questions.
+					</p>
+					<a
+						href="tel:+33XXXXXXXXX"
+						class="inline-flex items-center justify-center gap-2 w-full bg-dark-800 hover:bg-dark-900 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+					>
+						<i class="fa-solid fa-phone"></i>
+						<span>Appeler maintenant</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Sticky Call Button (Mobile Only) -->
+	<a
+		href="tel:+33XXXXXXXXX"
+		class="lg:hidden fixed bottom-4 right-4 left-4 z-50 flex items-center justify-center gap-2 bg-dark-800 hover:bg-dark-900 text-white font-semibold text-base px-6 py-4 rounded-full shadow-2xl transition-colors"
+	>
+		<i class="fa-solid fa-phone text-lg"></i>
+		<span>Appeler A2M Concept</span>
+	</a>
+</section>
+
+<script>
+	// Contact form submission with Web3Forms
+	const form = document.getElementById('contact-form') as HTMLFormElement;
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+	const btnText = document.getElementById('btn-text') as HTMLElement;
+	const btnLoading = document.getElementById('btn-loading') as HTMLElement;
+	const successMessage = document.getElementById('success-message') as HTMLElement;
+	const errorMessage = document.getElementById('error-message') as HTMLElement;
+
+	if (form) {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			// Hide previous messages
+			successMessage.classList.add('hidden');
+			errorMessage.classList.add('hidden');
+
+			// Show loading state
+			submitBtn.disabled = true;
+			btnText.classList.add('hidden');
+			btnLoading.classList.remove('hidden');
+
+			try {
+				const formData = new FormData(form);
+				const response = await fetch('https://api.web3forms.com/submit', {
+					method: 'POST',
+					body: formData
+				});
+
+				const data = await response.json();
+
+				if (data.success) {
+					// Show success message
+					successMessage.classList.remove('hidden');
+					form.reset();
+
+					// Scroll to success message
+					successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				} else {
+					// Show error message
+					errorMessage.classList.remove('hidden');
+					console.error('Form submission error:', data);
+				}
+			} catch (error) {
+				// Show error message
+				errorMessage.classList.remove('hidden');
+				console.error('Network error:', error);
+			} finally {
+				// Reset button state
+				submitBtn.disabled = false;
+				btnText.classList.remove('hidden');
+				btnLoading.classList.add('hidden');
+			}
+		});
+	}
+</script>

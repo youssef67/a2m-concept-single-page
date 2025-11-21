@@ -1,0 +1,84 @@
+---
+// Services section - Notre métier
+const services = [
+	{
+		icon: "fa-house",
+		title: "Carrelage intérieur",
+		description: "Pose de carrelage pour sols et murs dans toutes les pièces : cuisine, salon, chambre. Finitions soignées pour un rendu impeccable."
+	},
+	{
+		icon: "fa-tree",
+		title: "Carrelage extérieur",
+		description: "Aménagement de terrasses, allées et contours de piscine. Matériaux résistants aux intempéries pour une durabilité maximale."
+	},
+	{
+		icon: "fa-shower",
+		title: "Faïence",
+		description: "Revêtement mural pour salles de bain, cuisines et pièces humides. Large choix de finitions et de styles adaptés à vos envies."
+	},
+	{
+		icon: "fa-gem",
+		title: "Pierre naturelle",
+		description: "Pose de marbre, granit, travertin et ardoise. Matériaux nobles pour un rendu élégant et authentique dans votre intérieur."
+	},
+	{
+		icon: "fa-wrench",
+		title: "Rénovation",
+		description: "Réfection d'ancien carrelage, ragréage et étanchéité. Nous redonnons vie à vos sols et murs avec professionnalisme."
+	},
+	{
+		icon: "fa-lightbulb",
+		title: "Conseils",
+		description: "Accompagnement dans le choix des matériaux, tendances design et devis personnalisé. Votre projet est unique, notre approche aussi."
+	}
+];
+---
+
+<section id="notre-metier" class="py-12 md:py-16 lg:py-20 bg-white">
+	<div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-800 leading-tight mb-4">
+				Notre métier
+			</h2>
+			<p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+				De la pose à la rénovation, nous maîtrisons tous les aspects du carrelage pour donner vie à vos projets.
+			</p>
+		</div>
+
+		<!-- Services Grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+			{services.map((service) => (
+				<div class="group bg-slate-50 rounded-xl p-6 md:p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gold-100">
+					<!-- Icon -->
+					<div class="w-14 h-14 bg-gold-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gold-600 group-hover:scale-110 transition-all duration-300">
+						<i class={`fa-solid ${service.icon} text-2xl text-gold-600 group-hover:text-white group-hover:scale-110 transition-all`}></i>
+					</div>
+
+					<!-- Title -->
+					<h3 class="text-xl md:text-2xl font-semibold text-dark-800 mb-3">
+						{service.title}
+					</h3>
+
+					<!-- Description -->
+					<p class="text-base text-slate-600 leading-relaxed">
+						{service.description}
+					</p>
+				</div>
+			))}
+		</div>
+
+		<!-- Bottom CTA -->
+		<div class="text-center mt-12">
+			<p class="text-base md:text-lg text-slate-600 mb-6">
+				Un projet en tête ? Parlons-en ensemble.
+			</p>
+			<a
+				href="#contact"
+				class="inline-flex items-center justify-center bg-dark-800 hover:bg-dark-900 text-white font-semibold text-base md:text-lg px-8 py-4 rounded-lg transition-colors shadow-md hover:shadow-lg"
+			>
+				Obtenir un devis gratuit
+			</a>
+		</div>
+	</div>
+</section>
