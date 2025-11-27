@@ -2,40 +2,34 @@
 // Portfolio section - Nos réalisations (Carrousel)
 const projects = [
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Carrelage+Interieur",
-		alt: "Carrelage intérieur - Salon moderne"
+		image: "/images/chantier_starlette.jpg",
+		title: "Résidence Starlette – Strasbourg",
+		description: "Carrelage moderne pour résidence neuve dans l'écoquartier Starlette."
 	},
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Salle+de+Bain",
-		alt: "Faïence salle de bain contemporaine"
+		image: "/images/chantier_RTE_Lille.jpg",
+		title: "Siège RTE – Lille",
+		description: "Faïence et carrelage pour bureaux tertiaires haut de gamme."
 	},
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Terrasse",
-		alt: "Carrelage extérieur - Terrasse"
+		image: "/images/chantier_rive_etoile.jpeg",
+		title: "Centre Commercial Rive Étoile – Strasbourg",
+		description: "Cellules commerciales rénovées avec carrelage haute résistance."
 	},
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Cuisine",
-		alt: "Carrelage cuisine moderne"
+		image: "/images/chantier_rive_du_lac.webp",
+		title: "Résidence Rive du Lac – Ensisheim",
+		description: "Carrelage et faïence pour nouveau programme résidentiel."
 	},
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Pierre+Naturelle",
-		alt: "Pose pierre naturelle"
+		image: "/images/chantier_escapade.jpg",
+		title: "Programme L'Escapade – Eckbolsheim",
+		description: "Logements sociaux avec carrelages durables et faciles d'entretien."
 	},
 	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Piscine",
-		alt: "Carrelage contour de piscine"
-	},
-	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Renovation",
-		alt: "Rénovation carrelage ancien"
-	},
-	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Allee",
-		alt: "Carrelage allée extérieure"
-	},
-	{
-		image: "https://placehold.co/800x600/2563eb/white?text=Douche",
-		alt: "Faïence douche italienne"
+		image: "/images/chantier_drouot.jpg",
+		title: "Quartier Drouot – Mulhouse",
+		description: "Réhabilitation de 800+ logements avec modernisation des pièces humides."
 	}
 ];
 ---
@@ -71,16 +65,21 @@ const projects = [
 								<!-- Image -->
 								<img
 									src={project.image}
-									alt={project.alt}
-									class="w-full h-64 md:h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+									alt={project.title}
+									class="w-full h-80 md:h-96 object-cover group-hover:scale-110 transition-transform duration-500"
 									loading="lazy"
 								/>
 
 								<!-- Overlay on hover -->
-								<div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-dark-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-									<p class="text-white font-semibold text-base md:text-lg">
-										{project.alt}
-									</p>
+								<div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+									<div>
+										<p class="text-white font-semibold text-base md:text-lg mb-1">
+											{project.title}
+										</p>
+										<p class="text-white/80 text-sm md:text-base">
+											{project.description}
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
