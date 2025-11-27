@@ -145,11 +145,6 @@ const projects = [
 		let slidesPerView = getSlidesPerView();
 		let maxIndex = Math.max(0, totalSlides - slidesPerView);
 
-		// Touch/swipe support
-		let touchStartX = 0;
-		let touchEndX = 0;
-		let isDragging = false;
-
 		// Get slides per view based on screen size
 		function getSlidesPerView() {
 			const width = window.innerWidth;
@@ -243,36 +238,6 @@ const projects = [
 			}
 		}
 
-		// Touch event handlers
-		function handleTouchStart(e) {
-			touchStartX = e.touches[0].clientX;
-			isDragging = true;
-		}
-
-		function handleTouchMove(e) {
-			if (!isDragging) return;
-			touchEndX = e.touches[0].clientX;
-		}
-
-		function handleTouchEnd() {
-			if (!isDragging) return;
-			isDragging = false;
-
-			const swipeThreshold = 50;
-			const diff = touchStartX - touchEndX;
-
-			if (Math.abs(diff) > swipeThreshold) {
-				if (diff > 0) {
-					goNext();
-				} else {
-					goPrev();
-				}
-			}
-
-			touchStartX = 0;
-			touchEndX = 0;
-		}
-
 		// Keyboard navigation
 		function handleKeyboard(e) {
 			if (e.key === 'ArrowLeft') {
@@ -287,11 +252,6 @@ const projects = [
 		// Event listeners
 		prevButton.addEventListener('click', goPrev);
 		nextButton.addEventListener('click', goNext);
-
-		// Touch events
-		wrapper.addEventListener('touchstart', handleTouchStart, { passive: true });
-		wrapper.addEventListener('touchmove', handleTouchMove, { passive: true });
-		wrapper.addEventListener('touchend', handleTouchEnd);
 
 		// Keyboard navigation
 		document.addEventListener('keydown', handleKeyboard);
